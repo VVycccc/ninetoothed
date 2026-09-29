@@ -54,6 +54,7 @@ def find_nvcc() -> str:
             os.environ.get("CUDA_HOME"),
             os.environ.get("CUDA_PATH"),
             os.environ.get("CUCC_PATH"),
+            os.environ.get("NEUWARE_HOME"),
         )
         if value
     )
@@ -66,6 +67,7 @@ def find_nvcc() -> str:
             for compiler in ("nvcc", "cucc")
         ),
         "/usr/local/cuda/bin/nvcc",
+        "/usr/local/neuware/bin/cucc",
     )
 
     for candidate in candidates:
